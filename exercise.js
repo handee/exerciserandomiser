@@ -1,7 +1,9 @@
 function randomexercise(exerciselist,duration) {
+// choose a random exercise from those checked
     var maximum=exerciselist.length;
     var index=(Math.round(Math.random()*(maximum-1)));
     chosenexercise=exerciselist[index];
+// check that all classes are in 60 minute slots
     while (duration!="60" && chosenexercise.includes("class")) {
 	 index=(Math.round(Math.random()*(maximum-1)));
 	 chosenexercise=exerciselist[index];
@@ -12,6 +14,7 @@ function randomexercise(exerciselist,duration) {
 
 
 function toggle(source) {
+// function to manage "select all" for checkboxes
     var checkboxes = document.querySelectorAll('input[type="checkbox"]');
     for (var i = 0; i < checkboxes.length; i++) {
         if (checkboxes[i] != source)
@@ -21,6 +24,7 @@ function toggle(source) {
 
 function generateplan(form) {
 
+// get data from the form 
     var mondaytime=form.mon.value;
     var tuesdaytime=form.tue.value;
     var wednesdaytime=form.wed.value;
@@ -37,6 +41,7 @@ function generateplan(form) {
         }
     }
 
+// decide what to do each day 
     if (mondaytime== "0") {
         mondayactivity=" have a rest.";
     } else { 
@@ -75,6 +80,7 @@ function generateplan(form) {
         sundayactivity=" do "+sundaytime+" of "+randomexercise(chosenexercises,sundaytime);
     }
 
+// format output
 
     var x=document.getElementById("plan");
 
