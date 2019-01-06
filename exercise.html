@@ -1,0 +1,89 @@
+<html>
+<head><title>Exercise randomiser</title></head>
+<script src="exercise.js"></script>
+<body>
+
+
+
+<FORM NAME="myform" ACTION="" METHOD="GET">
+<h2>First choose the types of exercise you might be up for in the coming week.</h2>
+
+<input type="checkbox" name="exercise[]" value="Walking"> Walking |
+<input type="checkbox" name="exercise[]" value="Jogging"> Jogging |
+<input type="checkbox" name="exercise[]" value="Swimming"> Swimming |
+<input type="checkbox" name="exercise[]" value="Cycling"> Cycling |
+<input type="checkbox" name="exercise[]" value="Cardio in the gym"> Cardio in the gym |
+<input type="checkbox" name="exercise[]" value="A random cardio exercise class"> A random cardio exercise class |
+<input type="checkbox" name="exercise[]" value="A pilates or yoga class"> A pilates or yoga class |
+<input type="checkbox" name="exercise[]" value="Weight training"> Weight training | <input type = "checkbox" name="exercise[]" value= "A youtube pilates vid"> A youtube pilates vid | <input type="checkbox" name="exercise[]" value="A youtube cardio vid">A youtube cardio vid
+<br>
+<input type="checkbox" onClick="toggle(this)"> Select/Deselect all exercise types
+<br>
+<h2>Then select how much time each day you could do exercise</h2>
+<p>The "randomiser" assumes that classes have to last 60 minutes so if you're hoping to get some classes come up be sure to include some 60 minute slots.</p>
+Monday:
+<select name="mon">
+<option value="0">None</option>
+<option value="30">30 minutes</option>
+<option value="45">45 minutes</option>
+<option value="60">An hour</option>
+<option value="120">Two hours</option>
+</select>
+<br>Tuesday:
+<select name="tue">
+<option value="0">None</option>
+<option value="30">30 minutes</option>
+<option value="45">45 minutes</option>
+<option value="60">An hour</option>
+<option value="120">Two hours</option>
+</select>
+<br>Wednesday:
+<select name="wed">
+<option value="0">None</option>
+<option value="30">30 minutes</option>
+<option value="45">45 minutes</option>
+<option value="60">An hour</option>
+<option value="120">Two hours</option>
+</select>
+<br>Thursday:
+<select name="thu">
+<option value="0">None</option>
+<option value="30">30 minutes</option>
+<option value="45">45 minutes</option>
+<option value="60">An hour</option>
+<option value="120">Two hours</option>
+</select>
+<br>Friday:
+<select name="fri">
+<option value="0">None</option>
+<option value="30">30 minutes</option>
+<option value="45">45 minutes</option>
+<option value="60">An hour</option>
+<option value="120">Two hours</option>
+</select>
+<br>Saturday:
+<select name="sat">
+<option value="0">None</option>
+<option value="Parkrun">Parkrun</option>
+<option value="30">30 minutes</option>
+<option value="45">45 minutes</option>
+<option value="60">An hour</option>
+<option value="120">Two hours</option>
+</select>
+
+<br>Sunday:
+<select name="sun">
+<option value="0">None</option>
+<option value="30">30 minutes</option>
+<option value="45">45 minutes</option>
+<option value="60">An hour</option>
+<option value="120">Two hours</option>
+</select>
+<h2>And finally, click the button to generate a random plan. If you don't like it, just click the button again.</h2>
+<INPUT TYPE="button" NAME="button" Value="Generate plan" onClick="generateplan(this.form)">
+</FORM>
+
+<div id="plan">
+</div>
+</body>
+</html>
