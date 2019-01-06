@@ -38,58 +38,54 @@ function generateplan(form) {
     }
 
     if (mondaytime== "0") {
-        mondayactivity="Nothing";
+        mondayactivity=" have a rest.";
     } else { 
-        mondayactivity=randomexercise(chosenexercises,mondaytime);
+        mondayactivity=" do "+mondaytime+" of "+randomexercise(chosenexercises,mondaytime);
     }
     if (tuesdaytime== "0") {
-        tuesdayactivity="Nothing";
+        tuesdayactivity=" have a rest.";
     } else { 
-        tuesdayactivity=randomexercise(chosenexercises,tuesdaytime);
+        tuesdayactivity=" do "+tuesdaytime+" of "+randomexercise(chosenexercises,tuesdaytime);
     }
     if (wednesdaytime== "0") {
-        wednesdayactivity="Nothing";
+        wednesdayactivity=" have a rest.";
     } else { 
-        wednesdayactivity=randomexercise(chosenexercises,wednesdaytime);
+        wednesdayactivity=" do "+wednesdaytime+" of "+randomexercise(chosenexercises,wednesdaytime);
     }
     if (thursdaytime== "0") {
-        thursdayactivity="Nothing";
+        thursdayactivity=" have a rest.";
     } else { 
-        thursdayactivity=randomexercise(chosenexercises,thursdaytime);
+        thursdayactivity=" do "+thursdaytime+" of "+randomexercise(chosenexercises,thursdaytime);
     }
     if (fridaytime== "0") {
-        fridayactivity="Nothing";
+        fridayactivity=" have a rest.";
     } else { 
-        fridayactivity=randomexercise(chosenexercises,fridaytime);
+        fridayactivity=" do "+fridaytime+" of "+randomexercise(chosenexercises,fridaytime);
     }
     if (saturdaytime== "0") {
-        saturdayactivity="Nothing";
+        saturdayactivity=" have a rest.";
     } else if (saturdaytime=="Parkrun") {
-        saturdayactivity="Parkrun";
+        saturdayactivity=" it's Parkrun day!";
     } else { 
-        saturdayactivity=randomexercise(chosenexercises,saturdaytime);
+        saturdayactivity=" do "+saturdaytime+" of "+randomexercise(chosenexercises,saturdaytime);
     }
     if (sundaytime == "0") {
-        sundayactivity="Nothing";
+        sundayactivity=" have a rest.";
     } else { 
-        sundayactivity=randomexercise(chosenexercises,sundaytime);
+        sundayactivity=" do "+sundaytime+" of "+randomexercise(chosenexercises,sundaytime);
     }
 
 
     var x=document.getElementById("plan");
 
     var output="Plan:<br>";
-    output=output+" on Monday, do "+mondaytime+" of "+mondayactivity+"<br>";
-    output=output+" on Tuesday, do "+tuesdaytime+" of "+tuesdayactivity+"<br>";
-    output=output+" on Wednesday, do "+wednesdaytime+" of "+wednesdayactivity+"<br>";
-    output=output+" on Thursday, do "+thursdaytime+" of "+thursdayactivity+"<br>";
-    output=output+" on Friday, do "+fridaytime+" of "+fridayactivity+"<br>";
-    if (saturdaytime==="Parkrun") {
-            output=output+" on Saturday, it's Parkrun day! <br>";
-    } else {
-	    output=output+" on Saturday, do "+saturdaytime+" of "+saturdayactivity+"<br>";
-    }
-    output=output+" on Sunday, do "+sundaytime+" of "+sundayactivity+"<br>";
+    output=output+" on Monday, "+mondayactivity+"<br>";
+    output=output+" on Tuesday, "+tuesdayactivity+"<br>";
+    output=output+" on Wednesday, "+wednesdayactivity+"<br>";
+    output=output+" on Thursday, "+thursdayactivity+"<br>";
+    output=output+" on Friday, "+fridayactivity+"<br>";
+    output=output+" on Saturday, "+saturdayactivity+"<br>";
+    output=output+" on Sunday, "+sundayactivity+"<br>";
     x.innerHTML=output;
 
 }
