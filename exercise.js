@@ -12,6 +12,18 @@ function randomexercise(exerciselist,duration) {
 
 }
 
+function generateoutputstring(time, writein, exerciselist) {
+    if (time== "0") {
+        outputstring=" have a rest.";
+    } else if (writein=="Random") { 
+        outputstring=" do "+time+" minutes of "+randomexercise(exerciselist,time);
+    } else if (time=="Parkrun") {
+        outputstring=" is Parkrun day!";
+    } else {
+        outputstring=" do "+time+" minutes of "+writein;
+    }
+    return(outputstring);
+}
 
 function toggle(source) {
 // function to manage "select all" for checkboxes
@@ -25,6 +37,7 @@ function toggle(source) {
 function generateplan(form) {
 
 // get data from the form 
+// times
     var mondaytime=form.mon.value;
     var tuesdaytime=form.tue.value;
     var wednesdaytime=form.wed.value;
@@ -32,7 +45,15 @@ function generateplan(form) {
     var fridaytime =form.fri.value;
     var saturdaytime=form.sat.value;
     var sundaytime =form.sun.value;
-
+// override activities
+    var mondayw=form.monw.value;
+    var tuesdayw=form.tuew.value;
+    var wednesdayw=form.wedw.value;
+    var thursdayw=form.thuw.value;
+    var fridayw =form.friw.value;
+    var saturdayw=form.satw.value;
+    var sundayw =form.sunw.value;
+// exercise options
     var exerciseoptions=form.elements['exercise[]'];
     var chosenexercises=[];
     for (var i=0, len=exerciseoptions.length; i<len; i++) {
@@ -42,43 +63,13 @@ function generateplan(form) {
     }
 
 // decide what to do each day 
-    if (mondaytime== "0") {
-        mondayactivity=" have a rest.";
-    } else { 
-        mondayactivity=" do "+mondaytime+" of "+randomexercise(chosenexercises,mondaytime);
-    }
-    if (tuesdaytime== "0") {
-        tuesdayactivity=" have a rest.";
-    } else { 
-        tuesdayactivity=" do "+tuesdaytime+" of "+randomexercise(chosenexercises,tuesdaytime);
-    }
-    if (wednesdaytime== "0") {
-        wednesdayactivity=" have a rest.";
-    } else { 
-        wednesdayactivity=" do "+wednesdaytime+" of "+randomexercise(chosenexercises,wednesdaytime);
-    }
-    if (thursdaytime== "0") {
-        thursdayactivity=" have a rest.";
-    } else { 
-        thursdayactivity=" do "+thursdaytime+" of "+randomexercise(chosenexercises,thursdaytime);
-    }
-    if (fridaytime== "0") {
-        fridayactivity=" have a rest.";
-    } else { 
-        fridayactivity=" do "+fridaytime+" of "+randomexercise(chosenexercises,fridaytime);
-    }
-    if (saturdaytime== "0") {
-        saturdayactivity=" have a rest.";
-    } else if (saturdaytime=="Parkrun") {
-        saturdayactivity=" it's Parkrun day!";
-    } else { 
-        saturdayactivity=" do "+saturdaytime+" of "+randomexercise(chosenexercises,saturdaytime);
-    }
-    if (sundaytime == "0") {
-        sundayactivity=" have a rest.";
-    } else { 
-        sundayactivity=" do "+sundaytime+" of "+randomexercise(chosenexercises,sundaytime);
-    }
+    mondayactivity=generateoutputstring(mondaytime, mondayw, chosenexercises); 
+    tuesdayactivity=generateoutputstring(tuesdaytime, tuesdayw, chosenexercises); 
+    wednesdayactivity=generateoutputstring(wednesdaytime, wednesdayw, chosenexercises); 
+    thursdayactivity=generateoutputstring(thursdaytime, thursdayw, chosenexercises); 
+    fridayactivity=generateoutputstring(fridaytime, fridayw, chosenexercises); 
+    saturdayactivity=generateoutputstring(saturdaytime, saturdayw, chosenexercises); 
+    sundayactivity=generateoutputstring(sundaytime, sundayw, chosenexercises); 
 
 // format output
 

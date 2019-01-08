@@ -23,6 +23,7 @@
 <br>
 <h2>Then select how much time each day you could do exercise</h2>
 <p>The "randomiser" assumes that classes have to last 60 minutes so if you're hoping to get some classes come up be sure to include some 60 minute slots.</p>
+<p>Write in an activity if you want to over-ride the randomiser for a particular day; leave it as "Random" if you want the randomiser to choose.</p>
 Monday:
 <select name="mon">
 <option value="0">None</option>
@@ -31,6 +32,8 @@ Monday:
 <option value="60">An hour</option>
 <option value="120">Two hours</option>
 </select>
+of 
+<input type="text" name="monw" value="Random">
 <br>Tuesday:
 <select name="tue">
 <option value="0">None</option>
@@ -39,6 +42,8 @@ Monday:
 <option value="60">An hour</option>
 <option value="120">Two hours</option>
 </select>
+of 
+<input type="text" value="Random" name="tuew">
 <br>Wednesday:
 <select name="wed">
 <option value="0">None</option>
@@ -47,6 +52,8 @@ Monday:
 <option value="60">An hour</option>
 <option value="120">Two hours</option>
 </select>
+of 
+<input type="text" value="Random" name="wedw">
 <br>Thursday:
 <select name="thu">
 <option value="0">None</option>
@@ -55,6 +62,8 @@ Monday:
 <option value="60">An hour</option>
 <option value="120">Two hours</option>
 </select>
+of 
+<input type="text" value="Random" name="thuw">
 <br>Friday:
 <select name="fri">
 <option value="0">None</option>
@@ -63,6 +72,8 @@ Monday:
 <option value="60">An hour</option>
 <option value="120">Two hours</option>
 </select>
+of 
+<input type="text"  value="Random" name="friw">
 <br>Saturday:
 <select name="sat">
 <option value="0">None</option>
@@ -72,6 +83,8 @@ Monday:
 <option value="60">An hour</option>
 <option value="120">Two hours</option>
 </select>
+of 
+<input type="text" name="satw" value="Random">
 
 <br>Sunday:
 <select name="sun">
@@ -81,6 +94,8 @@ Monday:
 <option value="60">An hour</option>
 <option value="120">Two hours</option>
 </select>
+of 
+<input type="text" name="sunw" value="Random">
 <h2>And finally, click the button to generate a random plan. If you don't like it, just click the button again.</h2>
 <INPUT TYPE="button" NAME="button" Value="Generate plan" onClick="generateplan(this.form)">
 </FORM>
