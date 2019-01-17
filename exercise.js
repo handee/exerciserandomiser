@@ -15,10 +15,10 @@ function randomexercise(exerciselist,duration) {
 function generateoutputstring(time, writein, exerciselist) {
     if (time== "0") {
         outputstring=" have a rest.";
-    } else if (writein=="Random") { 
-        outputstring=" do "+time+" minutes of "+randomexercise(exerciselist,time);
     } else if (time=="Parkrun") {
         outputstring=" is Parkrun day!";
+    } else if (writein=="Random") { 
+        outputstring=" do "+time+" minutes of "+randomexercise(exerciselist,time);
     } else {
         outputstring=" do "+time+" minutes of "+writein;
     }
