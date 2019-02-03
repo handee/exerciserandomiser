@@ -1,3 +1,13 @@
+$(document).ready(function () {
+
+$('li').click(function (e) {
+        console.log('click', $(this).text());
+        var cb = $(this).find(":checkbox")[0];
+        if (e.target != cb) cb.checked = !cb.checked;
+        $(this).toggleClass("selected", cb.checked);
+});
+});
+
 function randomexercise(exerciselist,duration) {
 // choose a random exercise from those checked
     var maximum=exerciselist.length;
@@ -16,7 +26,7 @@ function generateoutputstring(time, writein, exerciselist) {
     if (time== "0") {
         outputstring=" have a rest.";
     } else if (time=="Parkrun") {
-        outputstring=" is Parkrun day!";
+        outputstring=" it's Parkrun day!";
     } else if (writein=="Random") { 
         outputstring=" do "+time+" minutes of "+randomexercise(exerciselist,time);
     } else {

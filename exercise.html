@@ -1,6 +1,17 @@
 <html>
 <head><title>Exercise randomiser</title></head>
+<link rel="stylesheet" media="screen" content-type="text/css" href="exercise.css"></link>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="exercise.js"></script>
+<script>
+$('li').click(function (e) {
+        console.log('click', $(this).text());
+        var cb = $(this).find(":checkbox")[0];
+        if (e.target != cb) cb.checked = !cb.checked;
+        $(this).toggleClass("selected", cb.checked);
+});
+
+</script>
 <body>
 
 <a href = "index.html">Back to my home page</a><br>
@@ -9,16 +20,19 @@
 
 <FORM NAME="myform" ACTION="" METHOD="GET">
 <h2>First choose the types of exercise you might be up for in the coming week.</h2>
-<p>
-<input type="checkbox" name="exercise[]" value="Walking"> Walking |
-<input type="checkbox" name="exercise[]" value="Jogging"> Jogging |
-<input type="checkbox" name="exercise[]" value="Swimming"> Swimming |
-<input type="checkbox" name="exercise[]" value="Cycling"> Cycling |
-<input type="checkbox" name="exercise[]" value="Cardio in the gym"> Cardio in the gym |
-<input type="checkbox" name="exercise[]" value="A random cardio exercise class"> A random cardio exercise class |
-<input type="checkbox" name="exercise[]" value="A pilates or yoga class"> A pilates or yoga class |
-<input type="checkbox" name="exercise[]" value="Weight training"> Weight training | <input type = "checkbox" name="exercise[]" value= "A youtube pilates vid"> A youtube pilates vid | <input type="checkbox" name="exercise[]" value="A youtube cardio vid">A youtube cardio vid
-<br>
+<ul>
+<li><input type="checkbox" name="exercise[]" value="Walking"> Walking </li>
+<li><input type="checkbox" name="exercise[]" value="Jogging"> Jogging </li>
+<li><input type="checkbox" name="exercise[]" value="Swimming"> Swimming </li>
+<li><input type="checkbox" name="exercise[]" value="Cycling"> Cycling </li> 
+<li><input type="checkbox" name="exercise[]" value="Gym Cardio"> Gym cardio </li>
+<li><input type="checkbox" name="exercise[]" value="Cardio class"> Cardio class </li>
+<li><input type="checkbox" name="exercise[]" value="Pilates or yoga class"> Pilates or yoga class </li> 
+<li><input type="checkbox" name="exercise[]" value="Weights"> Weights </li>
+<li><input type = "checkbox" name="exercise[]" value= "A pilates video"> Pilates video </li> 
+<li><input type="checkbox" name="exercise[]" value="A cardio video"> Cardio video </li>
+<li><input type="checkbox" name="exercise[]" value="A strength video"> Strength video </li>
+</ul>
 <input type="checkbox" onClick="toggle(this)"> Select/Deselect all exercise types
 </p>
 <h2>Then select how much time each day you could do exercise</h2>

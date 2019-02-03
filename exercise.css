@@ -1,0 +1,8 @@
+
+body {font-family: "Lucida Console", Monaco, monospace;	}
+
+
+p { font-size: 12pt}
+
+ul {padding:2px}
+li { list-style-type: none; display: inline; margin:4px; padding:4px; border:1px black solid;}
