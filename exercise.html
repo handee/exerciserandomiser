@@ -3,15 +3,6 @@
 <link rel="stylesheet" media="screen" content-type="text/css" href="exercise.css"></link>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="exercise.js"></script>
-<script>
-$('li').click(function (e) {
-        console.log('click', $(this).text());
-        var cb = $(this).find(":checkbox")[0];
-        if (e.target != cb) cb.checked = !cb.checked;
-        $(this).toggleClass("selected", cb.checked);
-});
-
-</script>
 <body>
 
 <a href = "index.html">Back to my home page</a><br>
@@ -42,7 +33,7 @@ $('li').click(function (e) {
 Monday:
 <select name="mon">
 <option value="0">None</option>
-<option value="30">30 minutes</option>
+<option value="30" Selected>30 minutes</option>
 <option value="45">45 minutes</option>
 <option value="60">An hour</option>
 <option value="120">Two hours</option>
@@ -52,7 +43,7 @@ of
 <br>Tuesday:
 <select name="tue">
 <option value="0">None</option>
-<option value="30">30 minutes</option>
+<option value="30" Selected>30 minutes</option>
 <option value="45">45 minutes</option>
 <option value="60">An hour</option>
 <option value="120">Two hours</option>
@@ -62,7 +53,7 @@ of
 <br>Wednesday:
 <select name="wed">
 <option value="0">None</option>
-<option value="30">30 minutes</option>
+<option value="30" Selected>30 minutes</option>
 <option value="45">45 minutes</option>
 <option value="60">An hour</option>
 <option value="120">Two hours</option>
@@ -72,7 +63,7 @@ of
 <br>Thursday:
 <select name="thu">
 <option value="0">None</option>
-<option value="30">30 minutes</option>
+<option value="30" Selected>30 minutes</option>
 <option value="45">45 minutes</option>
 <option value="60">An hour</option>
 <option value="120">Two hours</option>
@@ -82,7 +73,7 @@ of
 <br>Friday:
 <select name="fri">
 <option value="0">None</option>
-<option value="30">30 minutes</option>
+<option value="30" Selected>30 minutes</option>
 <option value="45">45 minutes</option>
 <option value="60">An hour</option>
 <option value="120">Two hours</option>
@@ -93,7 +84,7 @@ of
 <select name="sat">
 <option value="0">None</option>
 <option value="Parkrun">Parkrun</option>
-<option value="30">30 minutes</option>
+<option value="30" Selected>30 minutes</option>
 <option value="45">45 minutes</option>
 <option value="60">An hour</option>
 <option value="120">Two hours</option>
@@ -104,7 +95,7 @@ of
 <br>Sunday:
 <select name="sun">
 <option value="0">None</option>
-<option value="30">30 minutes</option>
+<option value="30" Selected>30 minutes</option>
 <option value="45">45 minutes</option>
 <option value="60">An hour</option>
 <option value="120">Two hours</option>
